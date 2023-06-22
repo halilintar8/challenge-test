@@ -1,0 +1,14 @@
+version: '3'
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    depends_on:
+      - backend-server
+  backend-server:
+    # image: backend-image
+    image: nginx
+    # Add additional configuration for your backend server if needed
